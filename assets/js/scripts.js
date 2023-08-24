@@ -13,14 +13,15 @@ jQuery(document).ready(function() {
     /*
 	    Countdown initializer
 	*/
-	var now = new Date();
-	var countTo = 25 * 24 * 60 * 60 * 1000 + now.valueOf();    
-	$('.timer').countdown(countTo, function(event) {
-		$(this).find('.days').text(event.offset.totalDays);
-		$(this).find('.hours').text(event.offset.hours);
-		$(this).find('.minutes').text(event.offset.minutes);
-		$(this).find('.seconds').text(event.offset.seconds);
-	});
+	var targetDate = new Date("August 29, 2023 00:00:00").getTime();
+
+$('.timer').countdown(targetDate, function(event) {
+    $(this).find('.days').text(event.offset.totalDays);
+    $(this).find('.hours').text(event.offset.hours);
+    $(this).find('.minutes').text(event.offset.minutes);
+    $(this).find('.seconds').text(event.offset.seconds);
+});
+
 
     /*
         Tooltips
